@@ -1,0 +1,112 @@
+# Translation for the Locale plugin for Omeka.
+# Copyright (C) 2014 Roy Rosenzweig Center for History and New Media
+# This file is distributed under the same license as the Omeka package.
+# RRCHNM <EMAIL@ADDRESS>, YEAR.
+#
+# Translators:
+# dario hereñu <magallania@gmail.com>, 2014
+# Rubén Alcaraz Martínez <rubenalcarazmartinez@gmail.com>, 2014
+msgid ""
+msgstr ""
+"Project-Id-Version: Omeka\n"
+"Report-Msgid-Bugs-To: http://github.com/omeka/plugin-Locale/issues\n"
+"POT-Creation-Date: 2014-09-21 17:49-0500\n"
+"PO-Revision-Date: 2014-11-23 09:41+0000\n"
+"Last-Translator: Rubén Alcaraz Martínez <rubenalcarazmartinez@gmail.com>\n"
+"Language-Team: Spanish (http://www.transifex.com/projects/p/omeka/language/es/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Locale"
+msgstr "Lugar"
+
+msgid "In english"
+msgstr "En français"
+
+msgid "Keywords"
+msgstr "Mot(s) clé(s)"
+
+msgid "Discover libraries"
+msgstr "Découvrir les librairies"
+
+msgid "Research tools"
+msgstr "Outils de recherche"
+
+msgid "Research tools and instruments"
+msgstr "Outils de la recherche"
+
+msgid "Zoom on..."
+msgstr "Zoom sur..."
+
+msgid "Who are we ?"
+msgstr "Qui sommes-nous ?"
+
+msgid "News room"
+msgstr "Actualités"
+
+msgid "Partners"
+msgstr "Acteurs du projet"
+
+msgid "Search results"
+msgstr "Résultats de la recherche"
+
+msgid "Limit your search"
+msgstr "Affinez votre recherche"
+
+msgid "Results"
+msgstr "Résultats"
+
+msgid "results"
+msgstr "résultats"
+
+msgid "Periods"
+msgstr "Périodes"
+
+msgid "Autographe dedication"
+msgstr "Envoi autographe"
+
+msgid "Languages"
+msgstr "Langues"
+
+msgid "%s of %s"
+msgstr "%s sur %s"
+
+msgid "No results"
+msgstr "Aucun résultat"
+
+msgid "By keywords"
+msgstr "Par mot(s) clé(s)"
+
+msgid "Author"
+msgstr "Auteur"
+
+msgid "Place"
+msgstr "Lieu"
+
+msgid "Tag"
+msgstr "Mot clé"
+
+msgid "Comment"
+msgstr "Commentaire"
+
+msgid "Tag(s)"
+msgstr "Mot(s) clé(s)"
+
+msgid "Back to library"
+msgstr "Retour à la bibliothèque"
+
+msgid "Where consult a copy"
+msgstr "Où consulter un exemplaire"
+
+msgid "Back to search results"
+msgstr "Retour aux résultats de la recherche"
+
+msgid "Material description"
+msgstr "Description matérielle"
+
+msgid "Download item"
+msgstr "Télécharger la notice"
+
