@@ -44,7 +44,6 @@ class TranslateItemsPlugin extends Omeka_Plugin_AbstractPlugin
         'before_delete_item',
         'admin_items_browse',
         'admin_items_show',
-        'admin_items_show_sidebar',
         'admin_items_browse_simple_each',
         'items_browse_sql',
         'admin_head',
@@ -184,57 +183,6 @@ class TranslateItemsPlugin extends Omeka_Plugin_AbstractPlugin
 
         $translateItem = get_db()->getTable('TranslateItem');
         $translateItem->deleteItem($item);
-    }
-
-
-    /**
-     * Display informations about :
-     * - Language of current item
-     * - Available translations
-     * - Available translations possibility
-     */
-    public function hookAdminItemsShowSidebar($args)
-    {
-        $item = $args['item'];
-
-        echo '<div class="panel">';
-        echo '<h4>Translate item</h4>';
-
-        $translateItem = get_db()->getTable('TranslateItem');
-        $isOriginal = $translateItem->isOriginal($item);
-
-        $lang_code = 'fr_FR';
-        $the_lang = new Zend_Locale($lang_code);
-        $the_language = ucfirst(Zend_Locale::getTranslation($the_lang->getLanguage(), 'language', $lang_code));
-
-        if ($isOriginal)
-            echo '<p>Notice originale en : ' . $translateItem->getLanguage($item) . '</p>';
-        else
-            echo '<p>Traduction en : ' . $translateItem->getLanguage($item) . '</p>';
-
-        if ($isOriginal) {
-            $translations = $translateItem->getTranslations($item);
-            echo "<p>Traductions disponibles : ";
-            if ($translations) {
-                echo '<ul>';
-                foreach ($translations as $translation) {
-                    echo '<li><a href="'.url('/items/show/'.$translation->item_id).'">'.$translation->language.'</a></li>';
-                }
-                echo '</ul>';
-            } else {
-                echo "aucune";
-            }
-            echo "</p>";
-        } else {
-            $originalItem = $translateItem->getOriginalItem($item);
-            echo '<p><a href="'.url('/items/show/'.$originalItem->id).'">Voir la notice originale</a></p>';
-        }
-
-        $url = url('/items/add/o/'.$item->id.'/l/es');
-        echo '<a href="'.$url.'">Traduire en ES</a>';
-
-        echo '<br /></div>';
-
     }
 
 
