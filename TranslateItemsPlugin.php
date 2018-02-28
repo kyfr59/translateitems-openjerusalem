@@ -366,4 +366,36 @@ class TranslateItemsPlugin extends Omeka_Plugin_AbstractPlugin
         echo '<script type="text/javascript" src="'.JAVASCRIPT_ADMIN_DIR.'/items-edit.js"></script>';
     }
 
+
+    /**
+     * Retuns all the other languages of an item (exclude the language of the item)
+     * @param Item|int $item The item object or item ID
+     * @return Array of TranslateItem objects
+     */
+    public static function getOtherLanguagesOfItem($item)
+    {
+        $item_id = ($item instanceof Item) ? $item->id : $item;
+
+        $tableTranslateItem = get_db()->getTable('TranslateItem');
+
+        $itemLanguage = $tableTranslateItem->getLanguage($item);
+
+        $isOriginal = $tableTranslateItem->isOriginal($item);
+
+        if ($isOriginal) {
+            $rows = $tableTranslateItem->getTranslations($item);
+        } else {
+            $originalItem = $tableTranslateItem->getOriginalItem($item);
+            $rows = $tableTranslateItem->findBy(array('original_item_id' => $originalItem->id));
+        }
+
+        foreach ($rows as $key => $row) {
+            if ($row->language == $itemLanguage) {
+                unset($rows[$key]);
+            }
+        }        
+
+        return $rows;
+    }
+
 }
