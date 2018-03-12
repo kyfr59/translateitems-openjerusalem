@@ -372,7 +372,7 @@ class TranslateItemsPlugin extends Omeka_Plugin_AbstractPlugin
      * @param Item|int $item The item object or item ID
      * @return Array of TranslateItem objects
      */
-    public static function getOtherLanguagesOfItem($item)
+    public static function getOtherLanguagesOfItem($item, $include_current = false)
     {
         $item_id = ($item instanceof Item) ? $item->id : $item;
 
@@ -382,16 +382,16 @@ class TranslateItemsPlugin extends Omeka_Plugin_AbstractPlugin
 
         $isOriginal = $tableTranslateItem->isOriginal($item);
 
-        if ($isOriginal) {
-            $rows = $tableTranslateItem->getTranslations($item);
-        } else {
-            $originalItem = $tableTranslateItem->getOriginalItem($item);
-            $rows = $tableTranslateItem->findBy(array('original_item_id' => $originalItem->id));
-        }
+        $item = $tableTranslateItem->getOriginalItem($item);
+        $rows = $tableTranslateItem->findBy(array('original_item_id' => $item->id));
 
         foreach ($rows as $key => $row) {
             if ($row->language == $itemLanguage) {
-                unset($rows[$key]);
+                if (!$include_current) {
+                    unset($rows[$key]);
+                } else {
+                    $rows[$key]->current = true;
+                }
             }
         }        
 
