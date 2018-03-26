@@ -24,7 +24,7 @@ class Table_TranslateItem extends Omeka_Db_Table
 
         $row = $this->findBy(array('item_id' => $item_id));
 
-        if ($row[0]->original == 0)
+        if (@$row[0]->original == 0)
             return true;
 
         return false;
