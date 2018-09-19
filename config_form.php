@@ -114,7 +114,7 @@ jQuery(document).ready(function($) {
 
     $('.translations')
         .dropdown({
-            maxSelections: 10,
+            maxSelections: 20,
             onChange: function(value, text, $selectedItem) {
         }
     });
