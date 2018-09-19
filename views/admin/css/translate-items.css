@@ -1,12 +1,13 @@
 .language-info {
 	float:right;
-	height:25px;
+	/*height:25px;*/
 	background:orangered;
 	padding:10px;
 	line-height:25px;
 	margin-bottom:10px;
 	color:white;
 	margin-left: 2px;
+	max-width:980px;
 }
 
 .language-info a {
